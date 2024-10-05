@@ -12,19 +12,18 @@ import com.educandoweb.course.repositories.UserRepository;
 
 @Configuration
 @Profile("test")
-public class TestConfig implements CommandLineRunner{
-	
+public class TestConfig implements CommandLineRunner {
+
 	@Autowired
 	private UserRepository userRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
-		
+
 		User user = new User(null, "Maria Brow", "maria@gmail.com", "988888888", "123456");
 		User user2 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456");
-		
+
 		userRepository.saveAll(Arrays.asList(user, user2));
 	}
-	
-	
+
 }
